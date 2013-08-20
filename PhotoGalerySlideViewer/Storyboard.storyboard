@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="S71-eY-Qns">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Gallery Collection View Controller-->
+        <scene sceneID="bZD-Qj-cCM">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="vpG-BU-SV6" customClass="PhotoGalleryCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="6kX-ML-Nhe">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8FH-G0-j7s">
+                            <size key="itemSize" width="104" height="104"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="xWb-wX-7aF">
+                                <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W22-ca-DIc"/>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="W22-ca-DIc" firstAttribute="trailing" secondItem="xWb-wX-7aF" secondAttribute="trailing" type="default" id="GGx-k6-FtV"/>
+                                    <constraint firstItem="W22-ca-DIc" firstAttribute="top" secondItem="xWb-wX-7aF" secondAttribute="top" type="default" id="WPV-sL-cnb"/>
+                                    <constraint firstItem="W22-ca-DIc" firstAttribute="leading" secondItem="xWb-wX-7aF" secondAttribute="leading" type="default" id="Z7b-F3-P56"/>
+                                    <constraint firstItem="W22-ca-DIc" firstAttribute="bottom" secondItem="xWb-wX-7aF" secondAttribute="bottom" type="default" id="pHK-YW-xaY"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="vpG-BU-SV6" id="X4A-Nk-cbv"/>
+                            <outlet property="delegate" destination="vpG-BU-SV6" id="PSL-xu-l4X"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="X6J-fo-TDN"/>
+                    <connections>
+                        <segue destination="tbc-Cy-l0C" kind="push" identifier="OpenLightbox" id="Qtq-qF-lfg"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14A-n9-luO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1248" y="25"/>
+        </scene>
+        <!--Lightbox View Controller-->
+        <scene sceneID="un4-ZT-p1N">
+            <objects>
+                <viewController id="tbc-Cy-l0C" customClass="LightboxViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JJc-08-z7o">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIe-Rr-bZt">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FIe-Rr-bZt" firstAttribute="trailing" secondItem="JJc-08-z7o" secondAttribute="trailing" type="default" id="HkI-RG-qOk"/>
+                            <constraint firstItem="FIe-Rr-bZt" firstAttribute="top" secondItem="JJc-08-z7o" secondAttribute="top" type="default" id="Z3U-Qz-opO"/>
+                            <constraint firstItem="FIe-Rr-bZt" firstAttribute="leading" secondItem="JJc-08-z7o" secondAttribute="leading" type="default" id="pn6-4Y-mRn"/>
+                            <constraint firstItem="FIe-Rr-bZt" firstAttribute="bottom" secondItem="JJc-08-z7o" secondAttribute="bottom" type="default" id="tBb-MP-7pG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7wY-si-Y0z"/>
+                    <connections>
+                        <outlet property="containerView" destination="FIe-Rr-bZt" id="CsH-bY-A3g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELO-5c-Pjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y6w-af-saN">
+            <objects>
+                <navigationController id="S71-eY-Qns" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bSW-Pe-OP2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vpG-BU-SV6" kind="relationship" relationship="rootViewController" id="Bce-fo-WLR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gZ-04-Q8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722" y="25"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="LightboxViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LightboxViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotoGalleryCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoGalleryCollectionViewController.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
