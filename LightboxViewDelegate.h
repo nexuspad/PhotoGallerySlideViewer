@@ -9,10 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol LightboxViewDelegate <NSObject>
-
-- (id)getPreviousEntry:(int)index;
-- (id)getNextEntry:(int)index;
-
 - (id)getEntryAtIndex:(int)index;
-
 @end

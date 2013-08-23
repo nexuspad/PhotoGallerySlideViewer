@@ -19,7 +19,7 @@
     if (currentIndex == 0) {        // No more to the left;
         return nil;
     }
-    return [self getImageView:[self.lightboxViewHelper getPreviousEntry:currentIndex] itsIndex:currentIndex-1];
+    return [self getImageView:[self.lightboxViewHelper getEntryAtIndex:currentIndex-1] itsIndex:currentIndex-1];
 }
 
 // The currentIndex is the index we move into
@@ -30,7 +30,7 @@
     if ((currentIndex + 1) > self.totalCount - 1) { // Go back the the first one if it will be out of bounds of array
         return [self getImageView:[self.lightboxViewHelper getEntryAtIndex:0] itsIndex:0];
     }
-    return [self getImageView:[self.lightboxViewHelper getNextEntry:currentIndex] itsIndex:currentIndex+1];
+    return [self getImageView:[self.lightboxViewHelper getEntryAtIndex:currentIndex+1] itsIndex:currentIndex+1];
 }
 
 - (UIImageView*)getImageView:(UIImage*)image itsIndex:(int)itsIndex {

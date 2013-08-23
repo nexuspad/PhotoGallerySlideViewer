@@ -55,24 +55,6 @@
     return [_imageViews objectAtIndex:index];
 }
 
-- (id)getPreviousEntry:(int)index {
-    if (index == 0) {
-        return [_imageViews lastObject];    // continue with the last one
-    } else {
-        return [_imageViews objectAtIndex:index-1];
-    }
-}
-
-
-- (id)getNextEntry:(int)index {
-    NSLog(@"get index %d", index);
-    if (index > _imageViews.count - 1) {
-        return [_imageViews objectAtIndex:0]; // Go back to the first one
-    }
-    
-    return [_imageViews objectAtIndex:index+1];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
